@@ -17,6 +17,9 @@ safe distance. So each scenario is compared with all real encounters of its type
 close calls only (closest distance under CLOSE_CALL_M).
 
 Writes reports/talay_scenarios.csv and reports/talay_vs_real.csv.
+
+The scenario files are not in this repository (Talay's repository is private). Copy experiments/scenarios/*.json
+from the Talay repository into talay_scenarios/ before running.
 """
 import json
 import math
@@ -34,8 +37,11 @@ CLOSE_CALL_M = 500
 
 def talay_conditions():
     """One row per scenario condition with a moving target vessel."""
+    paths = sorted(SCENARIO_DIR.glob("*.json"))
+    if not paths:
+        raise SystemExit(f"No scenario files in {SCENARIO_DIR}; copy them from Talay's experiments/scenarios/")
     rows = []
-    for path in sorted(SCENARIO_DIR.glob("*.json")):
+    for path in paths:
         scenario = json.loads(path.read_text(encoding="utf-8"))
         family = scenario["family"]
         if family not in FAMILY_TO_TYPE:

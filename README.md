@@ -92,6 +92,10 @@ Excluded encounters are kept in the output with an `excluded_reason`, so the fil
 
 **Talay scenarios vs real encounters** (`python -m src.big_data.compare_talay`, `reports/talay_vs_real*.csv`)
 
+Talay's repository is private, so its scenario files are not included here. To run the comparison, copy
+`experiments/scenarios/*.json` from the Talay repository into `talay_scenarios/`. The values used from them are in
+`reports/talay_scenarios.csv`.
+
 Talay's scenarios start ships 75–275 m apart, while real encounters start at 1 nm, so only scale-free values are
 compared: the angle between the courses, the speed ratio (slower / faster ship) and the direction of the other ship
 seen from the faster ship's bow. Talay places targets on a collision course on purpose, so the scenarios are also
@@ -123,7 +127,6 @@ step-by-step dashboard guide (in Turkish) is in [docs/powerbi_rehberi.md](docs/p
 src/common/       shared pipeline: config, ingest, clean
 src/big_data/     encounter detection, Talay comparison, Power BI tables
 src/data_mining/  ship type classification (next)
-talay_scenarios/  copies of Talay's test scenarios, used for the comparison
 reports/          generated statistics and quality reports; reports/powerbi/ holds the dashboard data
 docs/             Power BI guide
 ```

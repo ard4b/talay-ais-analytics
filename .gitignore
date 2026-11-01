@@ -13,3 +13,6 @@ __pycache__/
 
 # Power BI local cache
 *.pbix.bak
+
+# Talay scenario files come from the private Talay repository
+talay_scenarios/
