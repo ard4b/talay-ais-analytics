@@ -1,0 +1,5 @@
+predicted_type,ships,confident_ships,median_probability
+Cargo,50,19,0.5385
+Fishing,66,18,0.5005
+Passenger,35,13,0.509
+Tanker,10,1,0.497

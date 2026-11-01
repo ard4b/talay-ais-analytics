@@ -1,0 +1,6 @@
+model,best_parameters,cv_macro_f1,cv_macro_f1_std,test_window_macro_f1,test_window_balanced_accuracy,test_window_accuracy,test_ship_macro_f1,test_ship_balanced_accuracy,test_ship_accuracy
+Dummy (most frequent),,0.154,0.0,0.154,0.25,0.446,0.165,0.25,0.491
+Dummy (stratified),,0.249,0.003,0.251,0.251,0.304,0.223,0.251,0.433
+Logistic regression,C=1,0.649,0.028,0.673,0.702,0.663,0.667,0.716,0.652
+Decision tree,max_depth=8,0.66,0.022,0.669,0.71,0.648,0.682,0.728,0.668
+Random forest,min_samples_leaf=1,0.703,0.022,0.715,0.722,0.716,0.741,0.736,0.753

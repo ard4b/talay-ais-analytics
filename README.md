@@ -114,6 +114,34 @@ Suggested additions to Talay's scenarios: an oblique crossing (about 120°), mor
 0.8, a head-on condition with the target about 10° off the bow, and an overtaking condition with a speed ratio
 around 0.7.
 
+**Ship type from movement (Data Mining)** (`python -m src.data_mining.features`, then `python -m src.data_mining.train`)
+
+Each ship's track is cut into one-hour windows (a gap over 30 minutes starts a new segment; at least 20 minutes of
+positions per window), and each window is described by 22 movement features: speed, acceleration, turning, heading
+vs course, stops, distance and how straight the path is. Ship type is only the label. Name, size, MMSI and position
+are never used as inputs. Windows where the ship does not move at all (moored or anchored) are left out.
+
+Classes: Cargo, Tanker, Passenger and Fishing. That gives 1,639 ships and 46,071 moving windows. The models are
+scored on 328 ships they never saw during training (`reports/data_mining/`):
+
+| Model | Cross-validation macro-F1 (training ships) | Test macro-F1, per ship | Test accuracy, per ship |
+|---|---|---|---|
+| Dummy (most frequent) | 0.15 | 0.17 | 0.49 |
+| Dummy (stratified) | 0.25 | 0.22 | 0.43 |
+| Logistic regression | 0.65 | 0.67 | 0.65 |
+| Decision tree | 0.66 | 0.68 | 0.67 |
+| **Random forest** | **0.70** | **0.74** | **0.75** |
+
+- Fishing (F1 0.91), Cargo (0.78) and Passenger (0.77) are recognised well. Tanker (0.50) is mostly confused with
+  Cargo: both sail straight at about 10–12 knots, so their movement is very similar.
+- The most useful features are maximum, minimum and mean speed, and how fast the heading changes.
+- Splitting by row instead of by ship lets windows of the same ship end up in both training and test data. That
+  raises macro-F1 from 0.70 to 0.74, a result the model did not really earn.
+- The random forest, refitted on all labelled ships, predicts a type for the 161 unknown-type ships that move.
+  Only 51 get a probability of 0.6 or more. Many unknown ships are probably none of the four classes (small leisure
+  or work boats), so the predictions are only used when the model is confident. In the dashboard they appear as
+  e.g. "Cargo (predicted)".
+
 **Power BI dashboard** (`python -m src.big_data.powerbi_export`)
 
 All tables for the dashboard are written to one Excel workbook, `reports/powerbi/talay_ais_dashboard.xlsx`, one
@@ -126,7 +154,7 @@ step-by-step dashboard guide (in Turkish) is in [docs/powerbi_rehberi.md](docs/p
 ```
 src/common/       shared pipeline: config, ingest, clean
 src/big_data/     encounter detection, Talay comparison, Power BI tables
-src/data_mining/  ship type classification (next)
+src/data_mining/  movement features and ship type classification
 reports/          generated statistics and quality reports; reports/powerbi/ holds the dashboard data
 docs/             Power BI guide
 ```

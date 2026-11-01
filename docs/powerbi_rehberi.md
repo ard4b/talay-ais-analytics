@@ -129,8 +129,10 @@ Amaç: verinin ne kadar büyük olduğunu ve neden temizlik/Parquet gerektiğini
 6. **Çubuk grafik (filtreleme şeffaflığı)**: Y ekseni `status`, X ekseni `encounter_id` (**Sayı** olarak).
    Başlık: "Bulunan karşılaşmalar ve neden dışlandıkları". Bu grafik, liman ve servis gemisi filtrelerini hocaya
    göstermek için önemli.
-7. **Çubuk grafik (gemi tipleri)**: Y ekseni `encounter_ships[ship_group]`, X ekseni `encounter_ships[mmsi]`
-   (**Sayı**). Görsel filtresi olarak `encounters[kept] = True` ekle (ilişki sayesinde çalışır).
+7. **Çubuk grafik (gemi tipleri)**: Y ekseni `encounter_ships[ship_group_filled]`, X ekseni
+   `encounter_ships[mmsi]` (**Sayı**). Görsel filtresi olarak `encounters[kept] = True` ekle (ilişki sayesinde
+   çalışır). `ship_group_filled` sütununda AIS tipi bilinmeyen gemiler, veri madenciliği modelinin tahminiyle
+   ("Cargo (predicted)" gibi) görünür. İki dersin birleştiği yer burası.
 8. **Dilimleyiciler**: `encounters[date]`, `encounters[encounter_type]`.
 
 ## Sayfa 4: Talay ve gerçek deniz

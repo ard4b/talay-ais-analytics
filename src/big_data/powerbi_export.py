@@ -15,7 +15,8 @@ Sheets:
     hourly_traffic     ships in Øresund per hour and ship group
     traffic_grid       ship-minutes per ~1 km cell in Øresund, for the traffic map
     encounters         every encounter found, with the reason when it is left out of the analysis
-    encounter_ships    the two ships of each encounter (one row per ship)
+    encounter_ships    the two ships of each encounter (one row per ship), with the predicted type for ships
+                       whose AIS type is unknown (after src.data_mining.train)
     scenario_points    real encounters and Talay conditions on the same scale-free values, for the scatter chart
     talay_vs_real      Talay's value against the real P10 / median / P90 per condition and metric
 """
@@ -27,6 +28,7 @@ from .compare_talay import CLOSE_CALL_M, talay_conditions
 from .encounters import AREA, SERVICE_TYPES
 
 OUT_PATH = REPORTS_DIR / "powerbi" / "talay_ais_dashboard.xlsx"
+PREDICTED_TYPES = DATA_DIR / "analysis" / "predicted_types.parquet"  # from src.data_mining.train
 CELL_LAT_DEG = 0.01    # about 1.1 km
 CELL_LON_DEG = 0.0175  # about 1.1 km at 56° N
 
@@ -177,7 +179,7 @@ def encounters(con):
 
 
 def encounter_ships(con):
-    return con.execute(f"""
+    ships = con.execute(f"""
         SELECT encounter_id, 'A' AS ship, mmsi_a AS mmsi, ship_type_a AS ship_type,
                {ship_group_sql('ship_type_a')} AS ship_group, sog_a AS speed_kn
         FROM enc
@@ -186,6 +188,15 @@ def encounter_ships(con):
         FROM enc
         ORDER BY encounter_id, ship
     """).df()
+    # Ships with an unknown AIS type get the data mining model's guess when it is confident enough
+    if PREDICTED_TYPES.exists():
+        predicted = pd.read_parquet(PREDICTED_TYPES)
+        ships = ships.merge(predicted[["mmsi", "predicted_type", "probability", "confident"]], on="mmsi",
+                            how="left")
+        use = (ships.ship_type == "Unknown") & ships.confident.fillna(False).astype(bool)
+        ships["ship_group_filled"] = ships.ship_group.where(~use, ships.predicted_type + " (predicted)")
+        ships = ships.drop(columns="confident")
+    return ships
 
 
 def scenario_points(enc):

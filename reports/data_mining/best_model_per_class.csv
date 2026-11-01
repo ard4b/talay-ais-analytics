@@ -1,0 +1,8 @@
+class,precision,recall,f1-score,support
+Cargo,0.77,0.789,0.779,161.0
+Fishing,0.912,0.912,0.912,68.0
+Passenger,0.794,0.75,0.771,36.0
+Tanker,0.508,0.492,0.5,63.0
+accuracy,0.753,0.753,0.753,0.753
+macro avg,0.746,0.736,0.741,328.0
+weighted avg,0.752,0.753,0.752,328.0

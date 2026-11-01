@@ -1,0 +1,11 @@
+repeat,split,macro_f1
+0,By ship (correct),0.702
+0,By row (leaky),0.739
+1,By ship (correct),0.69
+1,By row (leaky),0.747
+2,By ship (correct),0.714
+2,By row (leaky),0.736
+3,By ship (correct),0.716
+3,By row (leaky),0.742
+4,By ship (correct),0.69
+4,By row (leaky),0.744
