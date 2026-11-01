@@ -110,12 +110,20 @@ Suggested additions to Talay's scenarios: an oblique crossing (about 120°), mor
 0.8, a head-on condition with the target about 10° off the bow, and an overtaking condition with a speed ratio
 around 0.7.
 
+**Power BI dashboard** (`python -m src.big_data.powerbi_export`)
+
+All tables for the dashboard are written to one Excel workbook, `reports/powerbi/talay_ais_dashboard.xlsx`, one
+sheet per table (summary numbers, cleaning steps, CSV vs Parquet, traffic per hour and per ~1 km cell, encounters,
+and the Talay comparison). Excel keeps the column types, so Power BI does not misread decimals or dates. The
+step-by-step dashboard guide (in Turkish) is in [docs/powerbi_rehberi.md](docs/powerbi_rehberi.md).
+
 ## Repository layout
 
 ```
 src/common/       shared pipeline: config, ingest, clean
-src/big_data/     encounter detection and Talay comparison; Power BI tables (next)
+src/big_data/     encounter detection, Talay comparison, Power BI tables
 src/data_mining/  ship type classification (next)
 talay_scenarios/  copies of Talay's test scenarios, used for the comparison
-reports/          generated statistics and quality reports
+reports/          generated statistics and quality reports; reports/powerbi/ holds the dashboard data
+docs/             Power BI guide
 ```
