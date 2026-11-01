@@ -1,0 +1,51 @@
+date,step,rows_after,rows_removed,removed_pct_of_raw
+2025-02-25,Raw rows,17143288,0,0.0
+2025-02-25,Exact duplicate rows,9803270,7340018,42.82
+2025-02-25,"Not a ship (base station, buoy, aircraft...)",9418005,385265,2.25
+2025-02-25,Invalid MMSI,9384955,33050,0.19
+2025-02-25,Position not available or out of range,9347968,36987,0.22
+2025-02-25,Speed or course not available,8599917,748051,4.36
+2025-02-25,Speed above 50 knots,8599900,17,0.0
+2025-02-25,"Same ship, same second",8570682,29218,0.17
+2025-02-25,Position jumps,8570506,176,0.0
+2025-02-25,"Ships with a broken track (flagged, kept): 75",8570506,0,0.0
+2025-02-22,Raw rows,15951303,0,0.0
+2025-02-22,Exact duplicate rows,9439784,6511519,40.82
+2025-02-22,"Not a ship (base station, buoy, aircraft...)",9057890,381894,2.39
+2025-02-22,Invalid MMSI,9025933,31957,0.2
+2025-02-22,Position not available or out of range,8984166,41767,0.26
+2025-02-22,Speed or course not available,8286351,697815,4.37
+2025-02-22,Speed above 50 knots,8286308,43,0.0
+2025-02-22,"Same ship, same second",8249671,36637,0.23
+2025-02-22,Position jumps,8249516,155,0.0
+2025-02-22,"Ships with a broken track (flagged, kept): 64",8249516,0,0.0
+2025-02-23,Raw rows,17146722,0,0.0
+2025-02-23,Exact duplicate rows,9624559,7522163,43.87
+2025-02-23,"Not a ship (base station, buoy, aircraft...)",9206948,417611,2.44
+2025-02-23,Invalid MMSI,9181468,25480,0.15
+2025-02-23,Position not available or out of range,9135735,45733,0.27
+2025-02-23,Speed or course not available,8448868,686867,4.01
+2025-02-23,Speed above 50 knots,8448833,35,0.0
+2025-02-23,"Same ship, same second",8419054,29779,0.17
+2025-02-23,Position jumps,8418865,189,0.0
+2025-02-23,"Ships with a broken track (flagged, kept): 89",8418865,0,0.0
+2025-02-24,Raw rows,16906707,0,0.0
+2025-02-24,Exact duplicate rows,9663221,7243486,42.84
+2025-02-24,"Not a ship (base station, buoy, aircraft...)",9288853,374368,2.21
+2025-02-24,Invalid MMSI,9251659,37194,0.22
+2025-02-24,Position not available or out of range,9207299,44360,0.26
+2025-02-24,Speed or course not available,8482411,724888,4.29
+2025-02-24,Speed above 50 knots,8482068,343,0.0
+2025-02-24,"Same ship, same second",8448152,33916,0.2
+2025-02-24,Position jumps,8447929,223,0.0
+2025-02-24,"Ships with a broken track (flagged, kept): 66",8447929,0,0.0
+2025-02-26,Raw rows,17350107,0,0.0
+2025-02-26,Exact duplicate rows,9836564,7513543,43.31
+2025-02-26,"Not a ship (base station, buoy, aircraft...)",9420809,415755,2.4
+2025-02-26,Invalid MMSI,9387599,33210,0.19
+2025-02-26,Position not available or out of range,9340299,47300,0.27
+2025-02-26,Speed or course not available,8606683,733616,4.23
+2025-02-26,Speed above 50 knots,8606670,13,0.0
+2025-02-26,"Same ship, same second",8577170,29500,0.17
+2025-02-26,Position jumps,8577055,115,0.0
+2025-02-26,"Ships with a broken track (flagged, kept): 113",8577055,0,0.0

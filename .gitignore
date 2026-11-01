@@ -1,0 +1,15 @@
+# AIS data is large; it lives outside the repo (see README)
+data/
+*.zip
+*.csv
+*.parquet
+!reports/**/*.csv
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# Power BI local cache
+*.pbix.bak
