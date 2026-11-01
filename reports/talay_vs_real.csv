@@ -1,0 +1,91 @@
+real_group,condition_id,encounter_type,metric,talay_value,real_p10,real_median,real_p90,talay_percentile,within_real_range,real_encounters
+All encounters,crossing-c1,Crossing,course_diff_deg,90.0,81.48,115.45,161.4,15,True,510
+All encounters,crossing-c1,Crossing,speed_ratio,0.5,0.48,0.8,0.96,12,True,510
+All encounters,crossing-c1,Crossing,bearing_deg,26.6,7.91,43.74,86.55,33,True,510
+All encounters,crossing-c2,Crossing,course_diff_deg,90.0,81.48,115.45,161.4,15,True,510
+All encounters,crossing-c2,Crossing,speed_ratio,0.75,0.48,0.8,0.96,44,True,510
+All encounters,crossing-c2,Crossing,bearing_deg,36.9,7.91,43.74,86.55,43,True,510
+All encounters,crossing-c3,Crossing,course_diff_deg,90.0,81.48,115.45,161.4,15,True,510
+All encounters,crossing-c3,Crossing,speed_ratio,0.5,0.48,0.8,0.96,12,True,510
+All encounters,crossing-c3,Crossing,bearing_deg,26.6,7.91,43.74,86.55,33,True,510
+All encounters,crossing-c4,Crossing,course_diff_deg,90.0,81.48,115.45,161.4,15,True,510
+All encounters,crossing-c4,Crossing,speed_ratio,0.5,0.48,0.8,0.96,12,True,510
+All encounters,crossing-c4,Crossing,bearing_deg,23.8,7.91,43.74,86.55,30,True,510
+All encounters,crossing-c5,Crossing,course_diff_deg,90.0,81.48,115.45,161.4,15,True,510
+All encounters,crossing-c5,Crossing,speed_ratio,0.5,0.48,0.8,0.96,12,True,510
+All encounters,crossing-c5,Crossing,bearing_deg,26.6,7.91,43.74,86.55,33,True,510
+All encounters,head_on-c1,Head-on,course_diff_deg,180.0,168.7,175.95,179.3,100,False,692
+All encounters,head_on-c1,Head-on,speed_ratio,0.5,0.59,0.81,0.96,5,False,692
+All encounters,head_on-c1,Head-on,bearing_deg,0.0,6.99,29.85,59.89,0,False,692
+All encounters,head_on-c2,Head-on,course_diff_deg,180.0,168.7,175.95,179.3,100,False,692
+All encounters,head_on-c2,Head-on,speed_ratio,0.83,0.59,0.81,0.96,55,True,692
+All encounters,head_on-c2,Head-on,bearing_deg,0.0,6.99,29.85,59.89,0,False,692
+All encounters,head_on-c3,Head-on,course_diff_deg,180.0,168.7,175.95,179.3,100,False,692
+All encounters,head_on-c3,Head-on,speed_ratio,0.5,0.59,0.81,0.96,5,False,692
+All encounters,head_on-c3,Head-on,bearing_deg,2.0,6.99,29.85,59.89,1,False,692
+All encounters,head_on-c4,Head-on,course_diff_deg,180.0,168.7,175.95,179.3,100,False,692
+All encounters,head_on-c4,Head-on,speed_ratio,0.5,0.59,0.81,0.96,5,False,692
+All encounters,head_on-c4,Head-on,bearing_deg,2.0,6.99,29.85,59.89,1,False,692
+All encounters,head_on-c5,Head-on,course_diff_deg,180.0,168.7,175.95,179.3,100,False,692
+All encounters,head_on-c5,Head-on,speed_ratio,0.5,0.59,0.81,0.96,5,False,692
+All encounters,head_on-c5,Head-on,bearing_deg,0.0,6.99,29.85,59.89,0,False,692
+All encounters,overtaking-c1,Overtaking,course_diff_deg,0.0,1.2,12.1,58.04,0,False,247
+All encounters,overtaking-c1,Overtaking,speed_ratio,0.33,0.33,0.74,0.94,11,True,247
+All encounters,overtaking-c1,Overtaking,bearing_deg,0.0,2.22,22.13,99.16,0,False,247
+All encounters,overtaking-c2,Overtaking,course_diff_deg,0.0,1.2,12.1,58.04,0,False,247
+All encounters,overtaking-c2,Overtaking,speed_ratio,0.5,0.33,0.74,0.94,15,True,247
+All encounters,overtaking-c2,Overtaking,bearing_deg,0.0,2.22,22.13,99.16,0,False,247
+All encounters,overtaking-c3,Overtaking,course_diff_deg,0.0,1.2,12.1,58.04,0,False,247
+All encounters,overtaking-c3,Overtaking,speed_ratio,0.33,0.33,0.74,0.94,11,True,247
+All encounters,overtaking-c3,Overtaking,bearing_deg,3.4,2.22,22.13,99.16,13,True,247
+All encounters,overtaking-c4,Overtaking,course_diff_deg,0.0,1.2,12.1,58.04,0,False,247
+All encounters,overtaking-c4,Overtaking,speed_ratio,0.33,0.33,0.74,0.94,11,True,247
+All encounters,overtaking-c4,Overtaking,bearing_deg,3.4,2.22,22.13,99.16,13,True,247
+All encounters,overtaking-c5,Overtaking,course_diff_deg,0.0,1.2,12.1,58.04,0,False,247
+All encounters,overtaking-c5,Overtaking,speed_ratio,0.33,0.33,0.74,0.94,11,True,247
+All encounters,overtaking-c5,Overtaking,bearing_deg,0.0,2.22,22.13,99.16,0,False,247
+Close calls (< 500 m),crossing-c1,Crossing,course_diff_deg,90.0,89.83,124.0,162.53,10,True,88
+Close calls (< 500 m),crossing-c1,Crossing,speed_ratio,0.5,0.49,0.82,0.96,10,True,88
+Close calls (< 500 m),crossing-c1,Crossing,bearing_deg,26.6,4.14,23.59,51.28,57,True,88
+Close calls (< 500 m),crossing-c2,Crossing,course_diff_deg,90.0,89.83,124.0,162.53,10,True,88
+Close calls (< 500 m),crossing-c2,Crossing,speed_ratio,0.75,0.49,0.82,0.96,41,True,88
+Close calls (< 500 m),crossing-c2,Crossing,bearing_deg,36.9,4.14,23.59,51.28,72,True,88
+Close calls (< 500 m),crossing-c3,Crossing,course_diff_deg,90.0,89.83,124.0,162.53,10,True,88
+Close calls (< 500 m),crossing-c3,Crossing,speed_ratio,0.5,0.49,0.82,0.96,10,True,88
+Close calls (< 500 m),crossing-c3,Crossing,bearing_deg,26.6,4.14,23.59,51.28,57,True,88
+Close calls (< 500 m),crossing-c4,Crossing,course_diff_deg,90.0,89.83,124.0,162.53,10,True,88
+Close calls (< 500 m),crossing-c4,Crossing,speed_ratio,0.5,0.49,0.82,0.96,10,True,88
+Close calls (< 500 m),crossing-c4,Crossing,bearing_deg,23.8,4.14,23.59,51.28,50,True,88
+Close calls (< 500 m),crossing-c5,Crossing,course_diff_deg,90.0,89.83,124.0,162.53,10,True,88
+Close calls (< 500 m),crossing-c5,Crossing,speed_ratio,0.5,0.49,0.82,0.96,10,True,88
+Close calls (< 500 m),crossing-c5,Crossing,bearing_deg,26.6,4.14,23.59,51.28,57,True,88
+Close calls (< 500 m),head_on-c1,Head-on,course_diff_deg,180.0,168.81,177.3,179.6,100,False,208
+Close calls (< 500 m),head_on-c1,Head-on,speed_ratio,0.5,0.6,0.82,0.97,3,False,208
+Close calls (< 500 m),head_on-c1,Head-on,bearing_deg,0.0,4.01,10.15,18.85,0,False,208
+Close calls (< 500 m),head_on-c2,Head-on,course_diff_deg,180.0,168.81,177.3,179.6,100,False,208
+Close calls (< 500 m),head_on-c2,Head-on,speed_ratio,0.83,0.6,0.82,0.97,52,True,208
+Close calls (< 500 m),head_on-c2,Head-on,bearing_deg,0.0,4.01,10.15,18.85,0,False,208
+Close calls (< 500 m),head_on-c3,Head-on,course_diff_deg,180.0,168.81,177.3,179.6,100,False,208
+Close calls (< 500 m),head_on-c3,Head-on,speed_ratio,0.5,0.6,0.82,0.97,3,False,208
+Close calls (< 500 m),head_on-c3,Head-on,bearing_deg,2.0,4.01,10.15,18.85,4,False,208
+Close calls (< 500 m),head_on-c4,Head-on,course_diff_deg,180.0,168.81,177.3,179.6,100,False,208
+Close calls (< 500 m),head_on-c4,Head-on,speed_ratio,0.5,0.6,0.82,0.97,3,False,208
+Close calls (< 500 m),head_on-c4,Head-on,bearing_deg,2.0,4.01,10.15,18.85,4,False,208
+Close calls (< 500 m),head_on-c5,Head-on,course_diff_deg,180.0,168.81,177.3,179.6,100,False,208
+Close calls (< 500 m),head_on-c5,Head-on,speed_ratio,0.5,0.6,0.82,0.97,3,False,208
+Close calls (< 500 m),head_on-c5,Head-on,bearing_deg,0.0,4.01,10.15,18.85,0,False,208
+Close calls (< 500 m),overtaking-c1,Overtaking,course_diff_deg,0.0,1.3,6.3,44.3,0,False,71
+Close calls (< 500 m),overtaking-c1,Overtaking,speed_ratio,0.33,0.44,0.69,0.9,6,False,71
+Close calls (< 500 m),overtaking-c1,Overtaking,bearing_deg,0.0,2.01,13.5,108.17,0,False,71
+Close calls (< 500 m),overtaking-c2,Overtaking,course_diff_deg,0.0,1.3,6.3,44.3,0,False,71
+Close calls (< 500 m),overtaking-c2,Overtaking,speed_ratio,0.5,0.44,0.69,0.9,14,True,71
+Close calls (< 500 m),overtaking-c2,Overtaking,bearing_deg,0.0,2.01,13.5,108.17,0,False,71
+Close calls (< 500 m),overtaking-c3,Overtaking,course_diff_deg,0.0,1.3,6.3,44.3,0,False,71
+Close calls (< 500 m),overtaking-c3,Overtaking,speed_ratio,0.33,0.44,0.69,0.9,6,False,71
+Close calls (< 500 m),overtaking-c3,Overtaking,bearing_deg,3.4,2.01,13.5,108.17,15,True,71
+Close calls (< 500 m),overtaking-c4,Overtaking,course_diff_deg,0.0,1.3,6.3,44.3,0,False,71
+Close calls (< 500 m),overtaking-c4,Overtaking,speed_ratio,0.33,0.44,0.69,0.9,6,False,71
+Close calls (< 500 m),overtaking-c4,Overtaking,bearing_deg,3.4,2.01,13.5,108.17,15,True,71
+Close calls (< 500 m),overtaking-c5,Overtaking,course_diff_deg,0.0,1.3,6.3,44.3,0,False,71
+Close calls (< 500 m),overtaking-c5,Overtaking,speed_ratio,0.33,0.44,0.69,0.9,6,False,71
+Close calls (< 500 m),overtaking-c5,Overtaking,bearing_deg,0.0,2.01,13.5,108.17,0,False,71

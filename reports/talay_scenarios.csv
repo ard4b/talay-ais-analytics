@@ -1,0 +1,16 @@
+condition_id,encounter_type,visibility,own_speed_mps,target_speed_mps,start_distance_m,course_diff_deg,speed_ratio,bearing_deg
+crossing-c1,Crossing,clear,6,3.0,167.7,90,0.5,26.6
+crossing-c2,Crossing,clear,6,4.5,187.5,90,0.75,36.9
+crossing-c3,Crossing,clear,6,3.0,167.7,90,0.5,26.6
+crossing-c4,Crossing,clear,6,3.0,185.8,90,0.5,23.8
+crossing-c5,Crossing,fog,6,3.0,167.7,90,0.5,26.6
+head_on-c1,Head-on,clear,6,3.0,225.0,180,0.5,0.0
+head_on-c2,Head-on,clear,6,5.0,275.0,180,0.83,0.0
+head_on-c3,Head-on,clear,6,3.0,225.1,180,0.5,2.0
+head_on-c4,Head-on,clear,6,3.0,225.1,180,0.5,2.0
+head_on-c5,Head-on,haze,6,3.0,225.0,180,0.5,0.0
+overtaking-c1,Overtaking,clear,6,2.0,100.0,0,0.33,0.0
+overtaking-c2,Overtaking,clear,6,3.0,74.0,0,0.5,0.0
+overtaking-c3,Overtaking,clear,6,2.0,100.2,0,0.33,3.4
+overtaking-c4,Overtaking,clear,6,2.0,100.2,0,0.33,3.4
+overtaking-c5,Overtaking,haze,6,2.0,100.0,0,0.33,0.0

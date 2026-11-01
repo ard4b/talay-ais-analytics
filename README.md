@@ -90,11 +90,31 @@ ships do not have to be compared all against all.
 
 Excluded encounters are kept in the output with an `excluded_reason`, so the filtering can be checked.
 
+**Talay scenarios vs real encounters** (`python -m src.big_data.compare_talay`, `reports/talay_vs_real*.csv`)
+
+Talay's scenarios start ships 75–275 m apart, while real encounters start at 1 nm, so only scale-free values are
+compared: the angle between the courses, the speed ratio (slower / faster ship) and the direction of the other ship
+seen from the faster ship's bow. Talay places targets on a collision course on purpose, so the scenarios are also
+compared with the real **close calls** (closest distance under 500 m: 88 crossing, 208 head-on, 71 overtaking).
+
+| Scenario family | Talay | Real close calls (middle 80%, median) | Finding |
+|---|---|---|---|
+| Crossing: course angle | 90° | 90–163°, median 124° | Real crossings are more often oblique (closer to head-on) than square |
+| Crossing: speed ratio | 0.50–0.75 | 0.49–0.96, median 0.82 | Realistic, but 4 of 5 conditions use the low end (0.50) |
+| Head-on: speed ratio | 0.50–0.83 | 0.60–0.97, median 0.82 | Only head_on-c2 (0.83) is typical; 0.50 is rarer than 1 in 10 |
+| Head-on: other ship's direction | 0–2° | 4–19°, median 10° | Talay is a dead-on collision course; real close calls pass slightly offset |
+| Overtaking: speed ratio | 0.33–0.50 | 0.44–0.90, median 0.69 | Talay overtakes much faster than real ships do |
+| Head-on / overtaking: course angle | exactly 180° / 0° | 169–180° / 1–44° | Talay's ±5° heading jitter covers most of the real spread |
+
+Suggested additions to Talay's scenarios: an oblique crossing (about 120°), more conditions with a speed ratio around
+0.8, a head-on condition with the target about 10° off the bow, and an overtaking condition with a speed ratio
+around 0.7.
+
 ## Repository layout
 
 ```
 src/common/       shared pipeline: config, ingest, clean
-src/big_data/     encounter detection; Power BI tables and Talay comparison (next)
+src/big_data/     encounter detection and Talay comparison; Power BI tables (next)
 src/data_mining/  ship type classification (next)
 talay_scenarios/  copies of Talay's test scenarios, used for the comparison
 reports/          generated statistics and quality reports
