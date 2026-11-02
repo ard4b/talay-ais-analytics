@@ -1,0 +1,3 @@
+model_a,model_b,both_right,only_a_right,only_b_right,both_wrong,p
+Random forest,Logistic regression,191,56,23,58,0.000263636776465269
+Random forest,Decision tree,203,44,16,65,0.00039404324272610154

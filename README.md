@@ -142,6 +142,33 @@ scored on 328 ships they never saw during training (`reports/data_mining/`):
   or work boats), so the predictions are only used when the model is confident. In the dashboard they appear as
   e.g. "Cargo (predicted)".
 
+**Statistical tests** (`python -m src.statistics.group_tests`, then `python -m src.statistics.model_tests`)
+
+Windows of the same ship are not independent, so the group tests use one row per ship (the median of each feature
+over its moving windows; 1,639 ships). The ship-level table is in `reports/statistics/vessel_features.csv` so the
+tests can be repeated in SPSS or R. α = 0.05, Holm correction for multiple comparisons.
+
+- **Assumptions:** no feature is normal in all four classes (Shapiro-Wilk) and none has equal variances (Levene),
+  so non-parametric tests are used.
+- **H1, ship types move differently:** Kruskal-Wallis is significant for all 22 features. The largest effects are
+  mean turn rate (ε² = 0.42), turns per hour (0.40) and acceleration (0.40). In the Dunn post-hoc tests, every
+  pair of classes differs in 16–22 features, except Cargo vs Tanker: only 7 features differ, all with a small
+  effect (Cliff's δ ≈ 0.16, tankers slightly faster). This matches the model mixing up the two types.
+- **Multinomial logistic regression** (12 features left after removing those with VIF ≥ 10, standardised, Cargo as
+  reference): likelihood-ratio χ² = 1,284 (df 36, p < 0.001), McFadden R² = 0.37. For example, one standard
+  deviation more maximum speed multiplies the odds of Passenger vs Cargo by 4.9 (95% CI 3.4–7.0) and of Fishing vs
+  Cargo by 0.12 (0.08–0.18).
+- **H2, better than chance:** with ship types shuffled between ships 100 times, no model came close to its real
+  score (best shuffled macro-F1 0.30 vs 0.67–0.73), p = 0.0099 for all three, the smallest possible with 100
+  permutations.
+- **H3, Random forest is better:** McNemar on the 328 test ships, p < 0.001 against both other models.
+  Over 5×5 repeated ship-wise cross-validation, the Nadeau-Bengio corrected t-test gives a difference of +0.067
+  macro-F1 against logistic regression (p < 0.001) and +0.033 against the decision tree (p = 0.012).
+- **95% bootstrap intervals** (test ships resampled): random forest macro-F1 0.74 (0.69–0.79), accuracy 75%
+  (70–80%); logistic regression 0.67 (0.61–0.71); decision tree 0.68 (0.63–0.73).
+- **H4, leakage:** over 10 repeats, a row-wise split gives macro-F1 0.743 and a ship-wise split 0.707. The
+  difference, +0.036 (95% CI 0.028–0.045), is significant (paired t-test p < 0.001, Wilcoxon p = 0.002).
+
 **Power BI dashboard** (`python -m src.big_data.powerbi_export`)
 
 All tables for the dashboard are written to one Excel workbook, `reports/powerbi/talay_ais_dashboard.xlsx`, one
@@ -155,6 +182,7 @@ step-by-step dashboard guide (in Turkish) is in [docs/powerbi_rehberi.md](docs/p
 src/common/       shared pipeline: config, ingest, clean
 src/big_data/     encounter detection, Talay comparison, Power BI tables
 src/data_mining/  movement features and ship type classification
+src/statistics/   hypothesis tests on ship-level features and on the models
 reports/          generated statistics and quality reports; reports/powerbi/ holds the dashboard data
 docs/             Power BI guide
 ```
